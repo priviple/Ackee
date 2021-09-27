@@ -18,7 +18,7 @@ const createMicroContext = (integrationContext) => {
 const createContext = async (ip, headers) => {
 	return {
 		isDemoMode: config.isDemoMode,
-		isAuthenticated: await isAuthenticated(headers['authorization'], config.ttl),
+		isAuthenticated: await isAuthenticated(headers['x-ackee-authorization'], config.ttl),
 		isIgnored: ignoreCookie.isSet(headers['cookie']),
 		dateDetails: createDate(headers['time-zone']),
 		userAgent: headers['user-agent'],

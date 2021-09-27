@@ -9,7 +9,7 @@ export default () => {
 		return {
 			headers: {
 				...headers,
-				Authorization: `Bearer ${ token }`,
+				"X-Ackee-Authorization": `Bearer ${ token }`,
 			},
 		}
 	})
